@@ -3,7 +3,7 @@ function setup() {
 }
 
 function draw() {
-
+// hello
   background("black");
   noStroke();
 
