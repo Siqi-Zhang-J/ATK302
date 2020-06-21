@@ -1,12 +1,24 @@
 function setup() {
   createCanvas(400, 400);
+  background('black');
 }
 
 function draw() {
+  // Call the variableEllipse() method and send it the
+  // parameters for the current mouse position
+  // and the previous mouse position
+  variableEllipse(mouseX, mouseY, pmouseX, pmouseY);
+}
 
- background("black");//
-  noStroke();
+// The simple method variableEllipse() was created specifically
+// for this program. It calculates the speed of the mouse
+// and draws a small ellipse if the mouse is moving slowly
+// and draws a large ellipse if the mouse is moving quickly
 
+function variableEllipse(x, y, px, py) {
+  let speed = abs(x - px) + abs(y - py);
+  noStroke(speed);
+  rect(x, y, speed, speed);
 fill('250')
  ellipse(200,250,200,200)
 ellipse(140,140,80,200)
