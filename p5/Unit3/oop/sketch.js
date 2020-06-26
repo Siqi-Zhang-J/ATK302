@@ -1,7 +1,9 @@
+let bg;
 let cars = [];
 
 function setup() {
-  createCanvas(500, 500);
+   bg =loadImage('assest/94682f5b668ca9e310cac0e811e885da.jpg');
+   createCanvas(500, 500);
 
   for (let i = 0; i < 40; i++) {
     cars.push(new Car());
@@ -10,7 +12,7 @@ function setup() {
 }
 
 function draw() {
-  background('black');
+background(bg);
 
 //  cars.push(new Car());  // for particle system
 // but this is DANGEROUS because spawns MANY
@@ -40,10 +42,7 @@ class Car {
 
   display() {
     fill(this.r, this.g, this.b, this.a) ;
-//    ellipse(this.pos.x, this.pos.y, 30, 30);
-  textSize(this.size) ;
-   text("DESIGN", this.pos.x, this.pos.y);
-   // image(img1, this.pos.x, this.pos.y, 100, 100) ;
+    ellipse(this.pos.x, this.pos.y, 15, 15);
   }
 
   update() {
