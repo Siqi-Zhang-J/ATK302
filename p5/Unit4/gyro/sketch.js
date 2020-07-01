@@ -52,7 +52,7 @@ function draw() {
   // Here is where you can design this program!
   fill('white');
   noStroke();
-  textSize(300);
+  textSize(200);
   textAlign(CENTER);
   text("YEAH", width / 2, height / 2);
 
