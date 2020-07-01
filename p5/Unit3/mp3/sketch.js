@@ -1,28 +1,63 @@
-let cars = []; // an array for the objects
-let frogPos ;
-let state = 0 ;
+var cars = [];
+var picture = []; // an array for the objects
+var frogPos ;
+let state = -1 ;
 let timer = 0 ;
+let img1 ;
+let img2 ;
+let song1, song2, song3;
+
+function preload() {
+  song1 = loadSound("assets/1.mp3");
+  song2 = loadSound("assets/2.mp3");
+  song3 = loadSound("assets/3.mp3");
+  song1.loop();
+  song1.loop();
+  song1.loop();
+  song1.pause();
+  song2.pause();
+  song3.pause();
+
+
+}
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
 
-  frogPos = createVector(width/2, height-120) ;
+  createCanvas(446, 311) ;;
+  img1 = loadImage("assets/2.jpeg") ;
+  img2 = loadImage("assets/1.jpg") ;
+
+picture[0] = loadImage("assets/hmbb.png");
+picture[1] = loadImage("assets/zyg.png");
 
   // spawn the objects
   for (let i = 0; i < 10; i++) {
     cars.push(new Car());  // put the objects onto the cars array
   }
+  frogPos = createVector(width / 2, height - 120);
+  rectMode(CENTER);
+  ellipseMode(CENTER);
+  imageMode(CENTER);
+
+
 }
+
 
 
 function draw() {
 
   switch(state) {
 
+    case -1:
+    song1.play() ;
+    state = 0 ;
+    break ;
+
     case 0:
-    background('grey') ; // put image here
-    // image()...
-    text("welcome to my game!", 200, 200) ;
+    background('grey') ;
+   image(img2,width/2,height/2,width,height) ;
+   fill('black');
+    text("welcome to my game!", 150, 200) ;
     break ;
 
     case 1:  //game state
@@ -35,15 +70,17 @@ function draw() {
       break ;
 
     case 2:
-    background('green') ; // put image here
+    background('pink') ;
+    image(img2,width/2,height/2,width,height) ;// put image here
     fill('black') ;
-    text("You won!!!", 200, 200) ;
+    text("You won!!!", 150, 200) ;
     break ;
 
     case 3:
-      background('blue') ; // put image here
+      background('blue') ;
+      image(img1,width/2,height/2,width,height) ;// put image here
       fill('black') ;
-      text("Sorry,you are lost,try again!", 200, 200) ;
+      text("Sorry,you are lost,try again!", 150, 200) ;
       break ;
 
   }
@@ -102,8 +139,8 @@ function game() {
 
   // draw a "frog" here
   fill('green') ;
-  ellipse(frogPos.x, frogPos.y, 70, 70) ;
-  // image...
+//  ellipse(frogPos.x, frogPos.y, 70, 70) ;
+  image(picture[0], frogPos.x, frogPos.y, 70, 70);
 
   //    checkForKeys() ;
 
