@@ -52,9 +52,9 @@ function draw() {
   // Here is where you can design this program!
   fill('white');
   noStroke();
-  textSize(100);
+  textSize(80);
   textAlign(CENTER);
-  text("YEAH", width / 2, height / 2);
+  text("Squidward", width / 2, height / 2);
 
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
