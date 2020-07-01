@@ -22,7 +22,7 @@ function setup() {
   gamma = 0;
 
 // initialize other variables
-  bunnyImage = loadImage("assets/ZYG.jpg");
+  bunnyImage = loadImage("assets/ZY.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
