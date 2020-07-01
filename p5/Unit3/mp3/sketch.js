@@ -26,6 +26,7 @@ function setup() {
   createCanvas(446, 311) ;;
   img1 = loadImage("assets/2.jpeg") ;
   img2 = loadImage("assets/1.jpg") ;
+  //
 
 picture[0] = loadImage("assets/hmbb.png");
 picture[1] = loadImage("assets/zyg.png");
