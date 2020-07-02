@@ -14,7 +14,7 @@ function setup() {
   // MINE WILL STOP WORKING IF EVERYONE USES IT!!!
 
   //var myJSONString = 'https://api.openweathermap.org/data/2.5/weather?zip=61820,us&units=imperial&';
-  var myJSONString = 'https://api.openweathermap.org/data/2.5/weather?q=London,uk,&units=metric&';
+  var myJSONString = 'https://api.openweathermap.org/data/2.5/weather?q=Tokyo,JP&units=metric&';
 
 
   var myIDString = 'appid=ecb96c6f2772adc0320aaa567d9006dc'; // USE YOUR ID if you have one!!!
@@ -44,10 +44,10 @@ function draw() {
     case 1:
       background(200);
       fill('black');
-      text("What is the weather in " + weather.name + "！！！", 20, 20);
+      text("What is the weather in " + weather.name + "！！", 20, 20);
       text("temperature is " + weather.main.temp, 20, 40);
-      text("humidity is " + weather.main.humidity, 20, 60);
-      text("wind speed = " + weather.wind.speed, 20, 80);
+      text("humidity is "+ weather.main.humidity, 20, 60);
+      text("wind speed = " + weather.windspeed, 20, 80);
 
       // cloud
       fill('white');
