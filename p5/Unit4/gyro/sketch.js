@@ -10,6 +10,7 @@ var y = 0;
 var z = 0;
 let img1 ;
 let img2 ;
+let cars = [] ;
 
 // other variables
 var bunnyImage;
@@ -25,7 +26,7 @@ function setup() {
   beta = 0;
   gamma = 0;
 
-for (var 1 = 0;1 < 30;1++){
+for (var l = 0;l < 30;l++){
   cars.push(new Car());
 }
 
@@ -66,18 +67,18 @@ function draw() {
   frogPos.x = xPosition;
   frogPos.y = yPosition;
 
-  for (var i = 0; i < array.length; i++) {
+  for (var i = 0; i < cars.length; i++) {
    cars[i].display();
    cars[i].drive();
    if (cars[i].pos.dist(frogPos)<50){
-     cars.splice,(1,1);
+     cars.splice(i,1);
    }
   }
 
   fill('white');
   textSize(80);
   textAlign(CENTER);
-  text("Squidward"，width/2，600，windowWidth - 200,windowHeight - 200);
+  text("Squidward",width/2,600,windowWidth - 200,windowHeight - 200);
   // DECORATIONS
   // Just a bunch of text commands to display data coming in from addEventListeners
   textAlign(LEFT);
@@ -129,7 +130,7 @@ window.addEventListener('devicemotion', function(e) {
 
 
 
-function car(){
+function Car(){
   this.pos = createVector(100,100);
   this.vel = createVector(random(-5,5),random(-5,5));
   this.r = random(255);
@@ -140,9 +141,10 @@ function car(){
 
         this.display = function(){
           fill(this.r,this.g,this.a);
-          ellipse(this.pos.x,this.pos.y,50,50);
-          ellipse(this.pos.x + 35,this.pos.y,50,50);
-          rect(this.pos.x + 20,this.pos.y - 30,80,60);
+        //  ellipse(this.pos.x,this.pos.y,50,50);
+        image(img2,this.pos.x, this.pos.y, 50, 50) ;
+        //  ellipse(this.pos.x + 35,this.pos.y,50,50);
+        //  rect(this.pos.x + 20,this.pos.y - 30,80,60);
 
         }
 
