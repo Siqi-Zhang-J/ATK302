@@ -60,7 +60,7 @@ function draw() {
 
 
   // Here is where you can design this program!
-  image(img2,width/2,height/2,width,height) ;
+  image(bunnyImage,0, 0, 150, 150) ;
   pop();
 
 
